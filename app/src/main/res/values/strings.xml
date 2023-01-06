@@ -8,4 +8,12 @@
     <string name="result_dialog_title">Hello there!</string>
     <string name="result_dialog_message">The slider\'s value is %1$d. \nYou scored %2$d points this round.</string>
     <string name="result_dialog_button_text">Awesome!</string>
+    <string name="info">Info</string>
+    <string name="start_over">Start Over</string>
+    <string name="score_label">Score</string>
+    <string name="current_round_label">Round</string>
+    <string name="alert_title_1">Perfect!</string>
+    <string name="alert_title_2">You almost had it!</string>
+    <string name="alert_title_3">Not bad.</string>
+    <string name="alert_title_4">Are you even trying?</string>
 </resources>
