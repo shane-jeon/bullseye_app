@@ -4,13 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginStart="-20dp"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/infoButton"
+    <ImageView
+        android:id="@+id/bgImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/info"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background" />
+
+    <ImageButton
+        android:id="@+id/infoButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/circular_button"
+        android:src="@drawable/info_24"
+        app:layout_constraintBaseline_toBottomOf="parent"
         app:layout_constraintBottom_toBottomOf="@+id/roundGroup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -19,10 +33,10 @@
 
     <TextView
         android:id="@+id/textView"
+        style="@style/instruction_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/instruction_text"
-        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,11 +45,11 @@
 
     <TextView
         android:id="@+id/targetTextView"
+        style="@style/big_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/target_value_text"
-        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/seekBar"
         app:layout_constraintEnd_toEndOf="@+id/textView"
         app:layout_constraintStart_toStartOf="@+id/textView"
@@ -45,10 +59,16 @@
         android:id="@+id/seekBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:paddingStart="40dp"
+        android:paddingEnd="40dp"
+        android:progressDrawable="@drawable/seekbar_progress"
+        android:splitTrack="false"
+        android:thumb="@drawable/nub"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/maxValue"
         app:layout_constraintStart_toEndOf="@+id/minValue"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.501" />
 
     <TextView
         android:id="@+id/minValue"
@@ -78,18 +98,22 @@
         android:id="@+id/hitMeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="16dp"
         android:text="@string/hit_me_button_text"
+        app:cornerRadius="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <Button
+    <ImageButton
         android:id="@+id/startOverButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/start_over"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/circular_button"
+        android:src="@drawable/refresh_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/scoreGroup"
         app:layout_constraintHorizontal_bias="0.5"
@@ -116,6 +140,7 @@
 
         <TextView
             android:id="@+id/gameScoreTextView"
+            style="@style/game_stats_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
@@ -142,6 +167,7 @@
 
         <TextView
             android:id="@+id/gameRoundTextView"
+            style="@style/game_stats_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"

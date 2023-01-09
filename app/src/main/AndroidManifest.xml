@@ -10,12 +10,19 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Bullseye"
+        android:theme="@style/Theme.CustomSplashScreen"
         tools:targetApi="31">
+        <activity android:name=".AboutActivity"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.Bullseye"
+            android:exported="false"/>
+
         <activity
             android:name=".MainActivity"
+            android:exported="true"
             android:screenOrientation="landscape"
-            android:exported="true">
+            android:theme="@style/Theme.Bullseye.NoActionBar.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
